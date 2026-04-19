@@ -262,3 +262,31 @@ Then submit the GitHub repository link as instructed.
 - [Python Downloads](https://www.python.org/downloads/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [GitHub SSH Setup Guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+
+# Run tests locally using Docker
+
+Docker Hub link: https://hub.docker.com/repository/docker/tomviggiano/601_module12/general
+
+To run tests locally:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate.bat  # Windows
+```
+
+### Install Required Packages
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+docker compose up -d
+```
+This will instantiate the DB and all background functions in order to properly test all code and functionality
+
+```bash
+pytest
+```
